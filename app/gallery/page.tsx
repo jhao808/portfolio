@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
 
-import { GalleryShowcase } from "@/components/gallery-showcase";
+import { GalleryCarousel } from "@/components/GalleryCarousel";
 import { Section } from "@/components/section";
-import { getGalleryImages } from "@/lib/photos";
+import { galleryPhotos } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "Gallery | HAO / STUDIO",
-  description: "A centered photography-style gallery with category filtering.",
+  description: "A center-focused interactive photography carousel.",
 };
 
-export default async function GalleryPage() {
-  const images = await getGalleryImages();
-
+export default function GalleryPage() {
   return (
     <main>
       <Section background="white" withDivider={false}>
         <div className="space-y-10">
-          <GalleryShowcase images={images} />
+          <GalleryCarousel images={galleryPhotos} />
           <div className="space-y-3 text-center">
             <h1 className="text-4xl font-black uppercase tracking-tight sm:text-5xl">
               Nature
