@@ -170,7 +170,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               <ArrowLeft className="h-4 w-4" />
               {getText(featuredProject.cta.label)}
             </BauhausButton>
-            <BauhausButton href="mailto:hello@hao.studio" variant="outline" showArrow>
+            <BauhausButton href="/contact" variant="outline" showArrow>
               Contact Studio
             </BauhausButton>
           </div>

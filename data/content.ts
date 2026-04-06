@@ -13,12 +13,16 @@ export const siteContent: SiteContent = {
       href: "/",
     },
     {
-      label: { zh: "项目", en: "Project" },
+      label: { zh: "项目", en: "Projects" },
       href: "/projects/modular-poster",
     },
     {
+      label: { zh: "画廊", en: "Gallery" },
+      href: "/gallery",
+    },
+    {
       label: { zh: "联系", en: "Contact" },
-      href: "#contact",
+      href: "/contact",
     },
   ],
   hero: {
@@ -70,21 +74,15 @@ export const siteContent: SiteContent = {
     methods: [
       {
         label: { zh: "邮箱", en: "Email" },
-        value: "hello@hao.studio",
-        href: "mailto:hello@hao.studio",
+        value: "jhao6881@gmail.com",
+        href: "mailto:jhao6881@gmail.com",
         accent: "red",
       },
       {
         label: { zh: "GitHub", en: "GitHub" },
-        value: "github.com/hao",
-        href: "https://github.com/hao",
+        value: "github.com/jhao808",
+        href: "https://github.com/jhao808",
         accent: "blue",
-      },
-      {
-        label: { zh: "X / Twitter", en: "X / Twitter" },
-        value: "@hao__studio",
-        href: "https://x.com/hao__studio",
-        accent: "yellow",
       },
     ],
   },

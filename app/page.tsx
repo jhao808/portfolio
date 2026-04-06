@@ -1,7 +1,8 @@
-import { Circle, ExternalLink, Square, Triangle } from "lucide-react";
+import { Circle, Square, Triangle } from "lucide-react";
 
 import { BauhausButton } from "@/components/bauhaus-button";
 import { BauhausCard } from "@/components/bauhaus-card";
+import { ContactMethodGrid } from "@/components/contact-method-grid";
 import { Section } from "@/components/section";
 import { ShapeComposition } from "@/components/shape-composition";
 import { getText, siteContent } from "@/data/content";
@@ -9,12 +10,6 @@ import { cn } from "@/lib/utils";
 
 const statShapes = [Circle, Square, Triangle];
 const statAccent = ["bg-red", "bg-blue", "bg-yellow", "bg-white"];
-const contactAccent = {
-  red: "bg-red text-white",
-  blue: "bg-blue text-white",
-  yellow: "bg-yellow text-foreground",
-} as const;
-
 export default function HomePage() {
   return (
     <main>
@@ -35,7 +30,7 @@ export default function HomePage() {
                 <BauhausButton href={siteContent.featuredProject.href} variant="primary" showArrow>
                   {getText(siteContent.hero.primaryCta)}
                 </BauhausButton>
-                <BauhausButton href="#contact" variant="outline" shape="pill">
+                <BauhausButton href="/contact" variant="outline" shape="pill">
                   {getText(siteContent.hero.secondaryCta)}
                 </BauhausButton>
               </div>
@@ -121,41 +116,11 @@ export default function HomePage() {
             <p className="max-w-2xl text-base font-medium leading-relaxed text-white/90 sm:text-lg">
               {getText(siteContent.contact.description)}
             </p>
+            <BauhausButton href="/contact" variant="outline" shape="pill">
+              View Contact Page
+            </BauhausButton>
           </div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {siteContent.contact.methods.map((method, index) => (
-              <a
-                key={method.value}
-                href={method.href}
-                target={method.href.startsWith("http") ? "_blank" : undefined}
-                rel={method.href.startsWith("http") ? "noreferrer" : undefined}
-                className={cn(
-                  "group flex min-h-52 flex-col justify-between border-4 border-black p-6 shadow-bauhausLg transition duration-200 ease-out hover:-translate-y-1",
-                  contactAccent[method.accent],
-                )}
-              >
-                <div className="flex justify-between gap-4">
-                  <span
-                    className={cn(
-                      "block h-6 w-6 border-2 border-black bg-white",
-                      index === 0 && "rounded-full",
-                      index === 1 && "rotate-45",
-                    )}
-                    style={index === 2 ? { clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" } : undefined}
-                  />
-                  <ExternalLink className="h-5 w-5 transition duration-200 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </div>
-                <div className="space-y-3">
-                  <p className="text-xs font-bold uppercase tracking-[0.3em]">
-                    {getText(method.label)}
-                  </p>
-                  <p className="text-xl font-black uppercase leading-tight sm:text-2xl">
-                    {method.value}
-                  </p>
-                </div>
-              </a>
-            ))}
-          </div>
+          <ContactMethodGrid />
         </div>
       </Section>
 
@@ -170,7 +135,7 @@ export default function HomePage() {
               想做一张不那么温吞的个人网站，就从清晰的结构开始。
             </h2>
           </div>
-          <BauhausButton href="mailto:hello@hao.studio" variant="yellow" shape="pill" showArrow>
+          <BauhausButton href="/contact" variant="yellow" shape="pill" showArrow>
             Start a Project
           </BauhausButton>
         </div>
