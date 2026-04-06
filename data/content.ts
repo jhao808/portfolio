@@ -1,6 +1,6 @@
 import { ProjectDetail, SiteContent } from "@/lib/types";
 
-export const locale = "zh" as const;
+export const locale = "en" as const;
 
 export const siteContent: SiteContent = {
   brand: {

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Outfit } from "next/font/google";
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { SiteShell } from "@/components/site-shell";
 
 import "./globals.css";
 
@@ -24,13 +23,9 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <body className={`${outfit.variable} bg-background font-display text-foreground antialiased`}>
-        <div className="min-h-screen bg-background text-foreground">
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-        </div>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
